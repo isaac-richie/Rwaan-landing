@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type WaitlistFormProps = {
   disabled?: boolean;
@@ -48,6 +48,12 @@ export default function WaitlistForm({
     }
   };
 
+  useEffect(() => {
+    if (!message || status !== "success") return;
+    const timer = setTimeout(() => setMessage(null), 5000);
+    return () => clearTimeout(timer);
+  }, [message, status]);
+
   return (
     <form onSubmit={onSubmit} className="mt-8 flex w-full flex-col gap-3 sm:flex-row">
       <div className="flex-1">
@@ -70,15 +76,15 @@ export default function WaitlistForm({
         {disabled ? "Join Waitlist" : status === "loading" ? "Submitting..." : "Join Waitlist"}
       </button>
       {message ? (
-        <p
+        <div
           className={
             status === "error"
-              ? "text-xs text-red-300"
-              : "text-xs text-emerald-300"
+              ? "rounded-full border border-red-400/40 bg-red-500/10 px-4 py-2 text-xs font-semibold text-red-200"
+              : "rounded-full border border-emerald-400/40 bg-emerald-400/10 px-4 py-2 text-xs font-semibold text-emerald-200"
           }
         >
           {message}
-        </p>
+        </div>
       ) : null}
     </form>
   );

@@ -91,10 +91,10 @@ export default function Footer() {
           >
             Docs
           </Link>
-          <Link href="#" className="block transition hover:text-white">
+          <Link href="/help" className="block transition hover:text-white">
             Help Center
           </Link>
-          <Link href="#" className="block transition hover:text-white">
+          <Link href="/contact" className="block transition hover:text-white">
             Contact
           </Link>
         </div>
@@ -103,13 +103,13 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
             Legal
           </p>
-          <Link href="#" className="block transition hover:text-white">
+          <Link href="/terms" className="block transition hover:text-white">
             Terms of Service
           </Link>
-          <Link href="#" className="block transition hover:text-white">
+          <Link href="/privacy" className="block transition hover:text-white">
             Privacy Policy
           </Link>
-          <Link href="#" className="block transition hover:text-white">
+          <Link href="/risk" className="block transition hover:text-white">
             Risk Disclosure
           </Link>
         </div>

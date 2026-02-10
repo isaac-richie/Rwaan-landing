@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
 
 export async function POST(request: Request) {
   try {
@@ -35,6 +36,25 @@ export async function POST(request: Request) {
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    const resendKey = process.env.RESEND_API_KEY;
+    if (resendKey) {
+      const resend = new Resend(resendKey);
+      await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: "marketingrawlianalytics@proton.me",
+        subject: "New waitlist signup",
+        text: `New waitlist signup: ${normalizedEmail}`,
+      });
+
+      await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: normalizedEmail,
+        subject: "You’re on the Rawli Analytics waitlist",
+        text:
+          "Hi there,\\n\\nThanks for joining the Rawli Analytics waitlist.\\nYou’re on the list — we’ll notify you as soon as access opens.\\n\\nAppreciate the trust.\\n\\n– Rawli Analytics",
+      });
     }
 
     return NextResponse.json({ ok: true });
