@@ -35,8 +35,8 @@ Rawli’s risk engine is designed for signal confidence and exposure control:
 - **Alert triggers** for rapid market movement, liquidity changes, and confidence breaks
 - **Threshold configuration** so teams can set their own risk tolerance
 
-## Token Utility (RWAN)
-RWAN supports platform access and incentives:
+## Token Utility (RWAAN)
+RWAAN supports platform access and incentives:
 
 - Access tiers for advanced analytics
 - Staking benefits and reward mechanisms
@@ -61,7 +61,7 @@ A: Today, data is sourced from Polymarket. We are extending coverage to addition
 A: Alerts can be configured by probability, volatility, liquidity thresholds, and execution conditions.
 
 **Q: Is there token utility?**  
-A: RWAN utilities are tied to access tiers, staking benefits, and advanced analytics modules.
+A: RWAAN utilities are tied to access tiers, staking benefits, and advanced analytics modules.
 
 ---
 

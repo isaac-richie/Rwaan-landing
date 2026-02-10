@@ -25,7 +25,7 @@ const features = [
   {
     title: "Token Utility",
     description:
-      "RWAN powers access tiers, staking incentives, and future execution advantages. Utility is designed around measurable platform usage.",
+      "RWAAN powers access tiers, staking incentives, and future execution advantages. Utility is designed around measurable platform usage.",
     icon: Radar,
   },
 ];

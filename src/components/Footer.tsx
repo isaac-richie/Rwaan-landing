@@ -67,7 +67,7 @@ export default function Footer() {
             rel="noreferrer"
             className="block transition hover:text-white"
           >
-            Buy RWAN
+            Buy RWAAN
           </Link>
           <Link
             href="https://dexscreener.com/bsc/0xa285059bbc89fe9b43414d098318675462aaa3e6"
