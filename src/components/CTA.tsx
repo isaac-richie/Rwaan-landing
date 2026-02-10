@@ -35,15 +35,16 @@ export default function CTA() {
               probability data, risk signals, and execution context — built on BNB
               Chain.
             </p>
-            <WaitlistForm />
+            <WaitlistForm disabled disabledMessage="Waitlist opens soon." />
             <div className="mt-6">
               <a
                 href="https://rwaan.gitbook.io/rawli-analytics/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-semibold text-white/70 transition hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-bnb-gold/50 hover:text-white"
               >
                 Read Docs
+                <span className="text-xs text-bnb-gold/80">↗</span>
               </a>
             </div>
           </div>

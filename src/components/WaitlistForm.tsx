@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 
-export default function WaitlistForm() {
+type WaitlistFormProps = {
+  disabled?: boolean;
+  disabledMessage?: string;
+};
+
+export default function WaitlistForm({
+  disabled = false,
+  disabledMessage = "Waitlist opens soon.",
+}: WaitlistFormProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
@@ -11,6 +19,11 @@ export default function WaitlistForm() {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (disabled) {
+      setStatus("error");
+      setMessage(disabledMessage);
+      return;
+    }
     setStatus("loading");
     setMessage(null);
 
@@ -44,15 +57,17 @@ export default function WaitlistForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="Enter your email"
-          className="w-full rounded-full border border-white/15 bg-black/40 px-5 py-3 text-sm text-white placeholder:text-white/40 focus:border-bnb-gold/60 focus:outline-none"
+          disabled={disabled}
+          className="w-full rounded-full border border-white/15 bg-black/40 px-5 py-3 text-sm text-white placeholder:text-white/40 focus:border-bnb-gold/60 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
         />
       </div>
       <button
         type="submit"
-        disabled={status === "loading"}
-        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-6 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)] transition disabled:opacity-60"
+        disabled={disabled || status === "loading"}
+        aria-disabled={disabled || status === "loading"}
+        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-6 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)] transition disabled:cursor-not-allowed disabled:opacity-60 disabled:animate-pulse"
       >
-        {status === "loading" ? "Submitting..." : "Join Waitlist"}
+        {disabled ? "Join Waitlist" : status === "loading" ? "Submitting..." : "Join Waitlist"}
       </button>
       {message ? (
         <p
