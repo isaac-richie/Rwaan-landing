@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import WaitlistForm from "./WaitlistForm";
 
 export default function CTA() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="docs" className="relative py-20 sm:py-24">
+    <section id="waitlist" className="relative py-20 sm:py-24">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/20 to-transparent blur-3xl" />
       </div>
@@ -34,12 +35,13 @@ export default function CTA() {
               probability data, risk signals, and execution context — built on BNB
               Chain.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <WaitlistForm />
+            <div className="mt-6">
               <a
                 href="https://rwaan.gitbook.io/rawli-analytics/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+                className="text-sm font-semibold text-white/70 transition hover:text-white"
               >
                 Read Docs
               </a>

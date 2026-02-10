@@ -97,7 +97,8 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <motion.button
+          <motion.a
+            href="#waitlist"
             whileHover={prefersReducedMotion ? undefined : { scale: 1.035 }}
             whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
             className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-5 py-2 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)] transition"
@@ -105,7 +106,7 @@ export default function Navbar() {
             <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#F0B90B]/35 to-transparent blur-xl opacity-70 transition group-hover:opacity-100" />
             <span className="pointer-events-none absolute inset-0 -z-20 rounded-full bg-[radial-gradient(circle_at_30%_20%,_rgba(240,185,11,0.55),_transparent_60%)] blur-2xl opacity-70 animate-[pulse_2.6s_ease-in-out_infinite]" />
             Join Waitlist
-          </motion.button>
+          </motion.a>
         </div>
 
         <button
@@ -160,9 +161,12 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
-              <button className="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-5 py-2 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)]">
+              <a
+                href="#waitlist"
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-5 py-2 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)]"
+              >
                 Join Waitlist
-              </button>
+              </a>
             </div>
           </motion.div>
         ) : null}
