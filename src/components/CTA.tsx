@@ -6,7 +6,7 @@ import WaitlistForm from "./WaitlistForm";
 export default function CTA() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="waitlist" className="relative py-20 sm:py-24">
+    <section id="waitlist" className="section-divider relative py-20 sm:py-24">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/20 to-transparent blur-3xl" />
       </div>
@@ -26,7 +26,7 @@ export default function CTA() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               Ready to deploy
             </p>
-            <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
               Launch the Rwali terminal.
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-white/60">

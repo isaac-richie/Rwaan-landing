@@ -33,7 +33,7 @@ const features = [
 export default function Features() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="perpdex" className="relative py-16 sm:py-20">
+    <section id="perpdex" className="section-divider relative py-16 sm:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute right-10 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>
@@ -43,7 +43,7 @@ export default function Features() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
             Product Suite
           </p>
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+          <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
             Tools engineered for high-velocity prediction markets.
           </h2>
           <p className="max-w-2xl text-sm text-white/60">
@@ -67,7 +67,7 @@ export default function Features() {
                   ? { duration: 0 }
                   : { duration: 0.55, ease: "easeOut", delay: index * 0.06 }
               }
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
             >
               <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
                 <div className="absolute -left-10 top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />

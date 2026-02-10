@@ -32,7 +32,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-16 sm:py-20">
+    <section className="section-divider relative py-16 sm:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-16 top-8 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>
@@ -42,7 +42,7 @@ export default function FAQ() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
             Answers before you commit.
           </h2>
           <p className="mt-3 text-sm text-white/60">
@@ -56,11 +56,11 @@ export default function FAQ() {
             return (
               <div
                 key={item.q}
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 ring-1 ring-white/5 transform-gpu will-change-transform"
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between text-left text-sm font-semibold text-white"
+                  className="flex w-full items-center justify-between text-left text-sm font-semibold text-white sm:text-base"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
                   <span>{item.q}</span>

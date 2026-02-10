@@ -32,7 +32,7 @@ const pillars = [
 export default function Metrics() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="analytics" className="relative py-16 sm:py-20">
+    <section id="analytics" className="section-divider relative py-16 sm:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-64 w-[32rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/15 to-transparent blur-3xl" />
       </div>
@@ -43,7 +43,7 @@ export default function Metrics() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               What we are
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
               Building the prediction markets intelligence layer.
             </h2>
           </div>
@@ -65,7 +65,7 @@ export default function Metrics() {
                   ? { duration: 0 }
                   : { duration: 0.5, ease: "easeOut", delay: index * 0.05 }
               }
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(240,185,11,0.08)] transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(240,185,11,0.08)] ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
             >
               <div className="absolute -top-10 right-0 h-32 w-32 rounded-full bg-gradient-to-br from-[#F0B90B]/25 to-transparent blur-2xl transition group-hover:opacity-80" />
               <div className="flex items-center justify-between">

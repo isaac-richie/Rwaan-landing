@@ -42,7 +42,7 @@ export default function Hero() {
                 ? { duration: 0 }
                 : { duration: 0.6, ease: "easeOut", delay: 0.1 }
             }
-            className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl"
+            className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl xl:text-7xl"
           >
             Rawli Analytics
           </motion.h1>

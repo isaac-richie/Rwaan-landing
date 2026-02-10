@@ -7,7 +7,7 @@ export default function Preview() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative py-16 sm:py-20">
+    <section className="section-divider relative py-16 sm:py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-10 top-12 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/15 to-transparent blur-3xl" />
       </div>
@@ -18,7 +18,7 @@ export default function Preview() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               Platform Preview
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
               The Rawli terminal, engineered for clarity.
             </h2>
           </div>
@@ -37,7 +37,7 @@ export default function Preview() {
           }
           className="grid gap-6 md:grid-cols-[1.4fr_1fr]"
         >
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-black/60 p-4">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-black/60 p-4 ring-1 ring-white/5 transform-gpu will-change-transform">
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
             <div className="flex items-center justify-between px-2 pb-4 pt-2">
               <p className="text-sm text-white/60">Rawli Terminal Preview</p>
@@ -45,7 +45,7 @@ export default function Preview() {
                 Prototype
               </span>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/50">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/50 ring-1 ring-white/5">
               <Image
                 src="/work.png"
                 alt="Rawli Analytics terminal preview"
@@ -58,7 +58,7 @@ export default function Preview() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 ring-1 ring-white/5 transform-gpu will-change-transform">
               <p className="text-sm text-white/60">Watchlist Intelligence</p>
               <p className="mt-3 text-lg font-semibold text-white">
                 Track your high-impact markets with AI alerts.
@@ -67,7 +67,7 @@ export default function Preview() {
                 Real-time probability shifts, liquidity spikes, and execution windows.
               </p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 ring-1 ring-white/5 transform-gpu will-change-transform">
               <p className="text-sm text-white/60">Execution Context</p>
               <p className="mt-3 text-lg font-semibold text-white">
                 Funded routes, slippage bounds, and venue scoring.

@@ -25,6 +25,28 @@ h1, h2, h3, h4 {
 }
 
 @layer utilities {
+  .section-divider {
+    position: relative;
+  }
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(640px, 90%);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.14),
+      transparent
+    );
+    opacity: 0.6;
+  }
+}
+
+@layer utilities {
   .text-balance {
     text-wrap: balance;
   }
