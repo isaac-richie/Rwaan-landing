@@ -4,16 +4,16 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const pillars = [
   {
-    label: "RawliDEX",
-    summary:
-      "A perpetual DEX with an agentic trading terminal for autonomous execution, liquidity intelligence, and strategy automation.",
-    status: "In development",
-  },
-  {
     label: "Liquidity Staking",
     summary:
       "Structured yield access with transparent risk metrics and strategy tracking.",
     status: "Live",
+  },
+  {
+    label: "RawliDEX",
+    summary:
+      "A perpetual DEX with an agentic trading terminal for autonomous execution, liquidity intelligence, and strategy automation.",
+    status: "In development",
   },
   {
     label: "RawliCast",
