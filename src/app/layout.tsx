@@ -2,9 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rawli Analytics | BNB Chain DeFi Intelligence",
-  description:
-    "Premium analytics suite for BNB Chain DeFi. Cross-chain ready, high-speed, and data-rich.",
+  title: "Rawlianalytics",
+  description: "Institutional-grade analytics for prediction markets.",
+  openGraph: {
+    title: "Rawlianalytics",
+    description: "Structured analytics for on-chain prediction markets.",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rawlianalytics",
+    description: "Structured analytics for on-chain prediction markets.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
