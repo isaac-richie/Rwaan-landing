@@ -30,13 +30,12 @@ export default function CTA() {
               Launch the Rwali terminal.
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-white/60">
-              Access the Rawli analytics platform to connect your wallet, organize
-              watchlists, and analyze on-chain prediction markets with real-time
-              probability data, risk signals, and execution context — built on BNB
-              Chain.
+              One platform powering all the tools traders use. From market insights
+              to trade execution all in one place. One platform powering all you
+              need.
             </p>
             <WaitlistForm disabled disabledMessage="Waitlist opens soon." />
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
                 href="https://rwaan.gitbook.io/rawli-analytics/"
                 target="_blank"
@@ -45,6 +44,15 @@ export default function CTA() {
               >
                 Read Docs
                 <span className="text-xs text-bnb-gold/80">↗</span>
+              </a>
+              <a
+                href="https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-bnb-gold/20 bg-bnb-gold/10 px-4 py-2 text-sm font-semibold text-bnb-gold transition hover:border-bnb-gold/40"
+              >
+                Buy RWAAN
+                <span className="text-xs">↗</span>
               </a>
             </div>
           </div>

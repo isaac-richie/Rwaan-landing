@@ -48,10 +48,10 @@ export default function Footer() {
             Platform
           </p>
           <Link href="#analytics" className="block transition hover:text-white">
-            Analytics
+            RawliCast
           </Link>
           <Link href="#perpdex" className="block transition hover:text-white">
-            Perpdex
+            RawliPredict
           </Link>
           <Link
             href="https://www.stakingrawlianalytics.app"
@@ -60,6 +60,9 @@ export default function Footer() {
             className="block transition hover:text-white"
           >
             Staking
+          </Link>
+          <Link href="#waitlist" className="block transition hover:text-white">
+            RawliDEX
           </Link>
           <Link
             href="https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a"
@@ -117,7 +120,7 @@ export default function Footer() {
 
       <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-2 px-4 text-xs text-white/40 sm:px-6 md:flex-row md:items-center md:justify-between">
         <span>© 2026 Rawli Analytics. All rights reserved.</span>
-        <span>BNB Chain • Prediction Markets • DeFi Intelligence</span>
+        <span>BNB Chain • RawliPredict • DeFi Intelligence</span>
       </div>
     </footer>
   );

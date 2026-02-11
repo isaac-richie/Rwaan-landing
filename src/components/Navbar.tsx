@@ -7,15 +7,10 @@ import { useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Analytics", href: "#analytics", comingSoon: true },
-  { label: "Perpdex", href: "#perpdex", comingSoon: true },
+  { label: "RawliCast", href: "#analytics", comingSoon: true },
+  { label: "RawliPredict", href: "#perpdex", comingSoon: true },
+  { label: "RawliDEX", href: "#waitlist", comingSoon: true },
   { label: "Staking", href: "https://www.stakingrawlianalytics.app", external: true },
-  {
-    label: "Swap",
-    href: "https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a",
-    external: true,
-  },
-  { label: "Docs", href: "https://rwaan.gitbook.io/rawli-analytics/", external: true },
 ];
 
 export default function Navbar() {
@@ -46,7 +41,7 @@ export default function Navbar() {
         <Link href="#" className="flex items-center gap-3 sm:gap-4">
           <span className="relative h-12 w-12 overflow-hidden rounded-full border border-white/10 bg-white/5 shadow-[0_0_28px_rgba(240,185,11,0.28)] sm:h-[75px] sm:w-[75px]">
             <Image
-              src="/logo.avif"
+              src="/logo.jpeg"
               alt="Rawli Analytics logo"
               fill
               className="object-cover"
@@ -61,23 +56,41 @@ export default function Navbar() {
             const isSoon = comingSoonLinks.includes(link.label);
             return (
               <div key={link.label} className="relative flex items-center">
-                <Link
-                  href={link.href}
-                  onClick={(event) => {
-                    if (!isSoon) return;
-                    event.preventDefault();
-                    setActiveSoon(link.label);
-                  }}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noreferrer" : undefined}
-                  className={
-                    link.label === "Analytics" || link.label === "Perpdex"
-                      ? "group flex items-center gap-2 font-semibold text-bnb-white transition-colors hover:text-bnb-white"
-                      : "group flex items-center gap-2 transition-colors hover:text-bnb-white"
-                  }
-                >
-                  <span>{link.label}</span>
-                </Link>
+                {link.href.startsWith("#") ? (
+                  <a
+                    href={link.href}
+                    onClick={(event) => {
+                      if (!isSoon) return;
+                      event.preventDefault();
+                      setActiveSoon(link.label);
+                    }}
+                    className={
+                    link.label === "RawliCast" || link.label === "RawliPredict"
+                        ? "group flex items-center gap-2 font-semibold text-bnb-white transition-colors hover:text-bnb-white"
+                        : "group flex items-center gap-2 transition-colors hover:text-bnb-white"
+                    }
+                  >
+                    <span>{link.label}</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={(event) => {
+                      if (!isSoon) return;
+                      event.preventDefault();
+                      setActiveSoon(link.label);
+                    }}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noreferrer" : undefined}
+                    className={
+                    link.label === "RawliCast" || link.label === "RawliPredict"
+                        ? "group flex items-center gap-2 font-semibold text-bnb-white transition-colors hover:text-bnb-white"
+                        : "group flex items-center gap-2 transition-colors hover:text-bnb-white"
+                    }
+                  >
+                    <span>{link.label}</span>
+                  </Link>
+                )}
                 <AnimatePresence>
                   {activeSoon === link.label && (
                     <motion.span
@@ -105,7 +118,7 @@ export default function Navbar() {
           >
             <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#F0B90B]/35 to-transparent blur-xl opacity-70 transition group-hover:opacity-100" />
             <span className="pointer-events-none absolute inset-0 -z-20 rounded-full bg-[radial-gradient(circle_at_30%_20%,_rgba(240,185,11,0.55),_transparent_60%)] blur-2xl opacity-70 animate-[pulse_2.6s_ease-in-out_infinite]" />
-            Join Waitlist
+            Get Early Access
           </motion.a>
         </div>
 
@@ -165,7 +178,7 @@ export default function Navbar() {
                 href="#waitlist"
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-5 py-2 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)]"
               >
-                Join Waitlist
+                Get Early Access
               </a>
             </div>
           </motion.div>

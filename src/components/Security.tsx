@@ -65,7 +65,7 @@ export default function Security() {
                     ? { duration: 0 }
                     : { duration: 0.5, ease: "easeOut", delay: index * 0.05 }
                 }
-                className="rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
+                className="card-glow rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
               >
                 <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
                   <Icon className="h-5 w-5" />

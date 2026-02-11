@@ -50,6 +50,31 @@ h1, h2, h3, h4 {
   .text-balance {
     text-wrap: balance;
   }
+  .card-glow {
+    position: relative;
+  }
+  .card-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      240px 160px at 20% 10%,
+      rgba(240, 185, 11, 0.22),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 220ms ease;
+    pointer-events: none;
+  }
+  .card-glow:hover::after {
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    .card-glow::after {
+      opacity: 0 !important;
+    }
+  }
 }
 
 @keyframes slow-float {

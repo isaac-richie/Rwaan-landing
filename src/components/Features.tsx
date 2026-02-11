@@ -5,21 +5,21 @@ import { Activity, Radar, ShieldCheck, Sparkles } from "lucide-react";
 
 const features = [
   {
-    title: "Signal Engine",
+    title: "RawliPredict",
     description:
-      "AI-driven probability curves, anomaly detection, and predictive scoring tuned for fast-moving prediction markets. See momentum shifts, sentiment swings, and conviction bands in real time.",
+      "Prediction market engine with AI‑driven outcome forecasting, sentiment mapping, and event‑impact modeling for early edge.",
     icon: Sparkles,
   },
   {
-    title: "Execution Layer",
+    title: "RawliDEX",
     description:
-      "Perp and swap routing with latency-aware pricing, funding intelligence, and liquidity depth visibility. Execute with optimized slippage control and verified venue quality.",
+      "Perpetual DEX with an agentic trading terminal for autonomous execution, liquidity intelligence, and strategy automation.",
     icon: Activity,
   },
   {
-    title: "Risk & Alerts",
+    title: "RawliCast",
     description:
-      "Continuous exposure monitoring, drawdown triggers, and smart alerts that surface what matters before it hits. Configure thresholds for volatility spikes, whale flows, and tail risk.",
+      "AI market intelligence companion that interprets price structure, sentiment flow, and volatility cycles to deliver actionable insights.",
     icon: ShieldCheck,
   },
   {
@@ -67,7 +67,7 @@ export default function Features() {
                   ? { duration: 0 }
                   : { duration: 0.55, ease: "easeOut", delay: index * 0.06 }
               }
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
+              className="card-glow group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
             >
               <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
                 <div className="absolute -left-10 top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />

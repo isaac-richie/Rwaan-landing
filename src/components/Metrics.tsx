@@ -4,15 +4,9 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const pillars = [
   {
-    label: "AI Market Intelligence",
+    label: "RawliDEX",
     summary:
-      "Prediction market signals, probabilistic insights, and smart alerts built for speed.",
-    status: "In development",
-  },
-  {
-    label: "Perpetual DEX",
-    summary:
-      "Low-latency execution layer with pricing, funding, and liquidity intelligence.",
+      "A perpetual DEX with an agentic trading terminal for autonomous execution, liquidity intelligence, and strategy automation.",
     status: "In development",
   },
   {
@@ -22,9 +16,15 @@ const pillars = [
     status: "Live",
   },
   {
-    label: "Agentic Trading Terminal",
+    label: "RawliCast",
     summary:
-      "Autonomous workflows for monitoring, execution, and adaptive market response.",
+      "A real-time AI Market Intelligence Engine that continuously scans crypto markets, interprets price structure, evaluates sentiment flow, analyzes volatility cycles, and models risk to deliver actionable insights.",
+    status: "In development",
+  },
+  {
+    label: "RawliPredict",
+    summary:
+      "A dedicated prediction market engine for outcome forecasting, sentiment mapping, and event‑impact modeling. It fuses historical data, live market signals, and on‑chain flows to surface edge before consensus forms.",
     status: "In development",
   },
 ];
@@ -65,7 +65,7 @@ export default function Metrics() {
                   ? { duration: 0 }
                   : { duration: 0.5, ease: "easeOut", delay: index * 0.05 }
               }
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(240,185,11,0.08)] ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
+              className="card-glow group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(240,185,11,0.08)] ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
             >
               <div className="absolute -top-10 right-0 h-32 w-32 rounded-full bg-gradient-to-br from-[#F0B90B]/25 to-transparent blur-2xl transition group-hover:opacity-80" />
               <div className="flex items-center justify-between">

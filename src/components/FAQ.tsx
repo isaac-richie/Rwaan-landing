@@ -56,7 +56,7 @@ export default function FAQ() {
             return (
               <div
                 key={item.q}
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 ring-1 ring-white/5 transform-gpu will-change-transform"
+                className="card-glow rounded-2xl border border-white/10 bg-white/5 px-5 py-4 ring-1 ring-white/5 transform-gpu will-change-transform"
               >
                 <button
                   type="button"
