@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 const links = [
   { label: "RawliCast", href: "#analytics", comingSoon: true },
   { label: "RawliPredict", href: "#perpdex", comingSoon: true },
-  { label: "RawliDEX", href: "#waitlist", comingSoon: true },
+  { label: "RawliDEX", href: "https://perp-dex-teal.vercel.app", external: true },
   { label: "Staking", href: "https://www.stakingrawlianalytics.app", external: true },
 ];
 
@@ -41,7 +41,7 @@ export default function Navbar() {
         <Link href="#" className="flex items-center gap-3 sm:gap-4">
           <span className="relative h-12 w-12 overflow-hidden rounded-full border border-white/10 bg-white/5 shadow-[0_0_28px_rgba(240,185,11,0.28)] sm:h-[75px] sm:w-[75px]">
             <Image
-              src="/logo.jpeg"
+              src="/logo.png"
               alt="Rawli Analytics logo"
               fill
               className="object-cover"

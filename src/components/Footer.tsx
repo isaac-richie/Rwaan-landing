@@ -61,7 +61,12 @@ export default function Footer() {
           >
             Staking
           </Link>
-          <Link href="#waitlist" className="block transition hover:text-white">
+          <Link
+            href="https://perp-dex-teal.vercel.app"
+            target="_blank"
+            rel="noreferrer"
+            className="block transition hover:text-white"
+          >
             RawliDEX
           </Link>
           <Link
