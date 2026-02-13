@@ -11,7 +11,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 3s linear infinite;
-    will-change: background-position;
 }
 
 @keyframes shimmer {
@@ -39,35 +38,36 @@
     }
 }
 
-/* 2. NEON GLOW BUTTON */
+/* 2. NEON GLOW BUTTON (Optimized for scroll performance) */
 .neon-glow {
     position: relative;
     box-shadow:
         0 0 10px rgba(240, 185, 11, 0.4),
-        0 0 20px rgba(240, 185, 11, 0.3),
-        0 0 40px rgba(240, 185, 11, 0.2),
-        inset 0 0 10px rgba(240, 185, 11, 0.1);
-    animation: neon-pulse 2s ease-in-out infinite;
-    will-change: box-shadow;
+        0 0 20px rgba(240, 185, 11, 0.3);
 }
 
-@keyframes neon-pulse {
+/* Use pseudo-element with opacity for smooth GPU-accelerated animation */
+.neon-glow::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(240, 185, 11, 0.3) 0%, transparent 70%);
+    opacity: 0.6;
+    animation: neon-pulse-opacity 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes neon-pulse-opacity {
 
     0%,
     100% {
-        box-shadow:
-            0 0 10px rgba(240, 185, 11, 0.4),
-            0 0 20px rgba(240, 185, 11, 0.3),
-            0 0 40px rgba(240, 185, 11, 0.2),
-            inset 0 0 10px rgba(240, 185, 11, 0.1);
+        opacity: 0.6;
     }
 
     50% {
-        box-shadow:
-            0 0 15px rgba(240, 185, 11, 0.5),
-            0 0 30px rgba(240, 185, 11, 0.4),
-            0 0 60px rgba(240, 185, 11, 0.3),
-            inset 0 0 15px rgba(240, 185, 11, 0.15);
+        opacity: 1;
     }
 }
 
@@ -77,29 +77,18 @@
         box-shadow:
             0 0 8px rgba(240, 185, 11, 0.3),
             0 0 16px rgba(240, 185, 11, 0.2);
-        animation: neon-pulse-mobile 2s ease-in-out infinite;
     }
 
-    @keyframes neon-pulse-mobile {
-
-        0%,
-        100% {
-            box-shadow:
-                0 0 8px rgba(240, 185, 11, 0.3),
-                0 0 16px rgba(240, 185, 11, 0.2);
-        }
-
-        50% {
-            box-shadow:
-                0 0 12px rgba(240, 185, 11, 0.4),
-                0 0 24px rgba(240, 185, 11, 0.3);
-        }
+    .neon-glow::before {
+        inset: -12px;
+        opacity: 0.5;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .neon-glow {
+    .neon-glow::before {
         animation: none;
+        opacity: 0.6;
     }
 }
 
@@ -116,7 +105,6 @@
     border-radius: inherit;
     background: inherit;
     animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    will-change: transform, opacity;
 }
 
 @keyframes pulse-ring {
@@ -164,7 +152,6 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-    will-change: background-position, opacity;
 }
 
 .holographic:hover::after {
@@ -221,7 +208,6 @@
         50% 50%;
     animation: mesh-shift 20s ease infinite;
     pointer-events: none;
-    will-change: background-position;
 }
 
 @keyframes mesh-shift {

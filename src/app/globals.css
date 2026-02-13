@@ -56,6 +56,23 @@ p {
   font-family: var(--font-jetbrains-mono), Consolas, monospace;
 }
 
+/* CSS Containment for scroll performance */
+section {
+  contain: layout style;
+}
+
+canvas {
+  contain: strict;
+}
+
+/* Additional containment for animated sections */
+.hero,
+.features,
+.cta,
+.preview {
+  contain: layout style paint;
+}
+
 @layer utilities {
   .section-divider {
     position: relative;
@@ -307,5 +324,14 @@ p {
   .premium-cta {
     padding: 0.875rem 1.5rem;
     font-size: 0.8125rem;
+  }
+
+  /* Optimize blur effects for mobile performance */
+  .blur-3xl {
+    filter: blur(32px) !important;
+  }
+
+  .blur-2xl {
+    filter: blur(24px) !important;
   }
 }
