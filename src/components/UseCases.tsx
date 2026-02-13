@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Bot, Coins, Globe, Search, UserCircle } from "lucide-react";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 const useCases = [
   {
@@ -60,7 +61,8 @@ export default function UseCases() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-divider relative py-16 sm:py-20">
+    <section className="section-divider relative overflow-hidden py-16 sm:py-20">
+      <AnimatedBackgroundCSS intensity="medium" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-8 top-8 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>

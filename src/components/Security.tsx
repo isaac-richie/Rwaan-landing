@@ -2,6 +2,7 @@
 
 import { ShieldCheck, Lock, FileCheck, Eye } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 const items = [
   {
@@ -30,7 +31,8 @@ export default function Security() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-divider relative py-16 sm:py-20">
+    <section className="section-divider relative overflow-hidden py-16 sm:py-20">
+      <AnimatedBackgroundCSS intensity="low" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute right-10 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>

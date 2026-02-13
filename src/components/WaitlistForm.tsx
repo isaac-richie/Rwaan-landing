@@ -71,8 +71,7 @@ export default function WaitlistForm({
       <button
         type="submit"
         disabled={disabled || status === "loading"}
-        aria-disabled={disabled || status === "loading"}
-        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-6 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)] transition disabled:cursor-not-allowed disabled:opacity-60 disabled:animate-pulse"
+        className="neon-glow inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-6 py-3 text-sm font-semibold text-black transition disabled:cursor-not-allowed disabled:opacity-60 disabled:animate-none"
       >
         {disabled ? "Join Waitlist" : status === "loading" ? "Submitting..." : "Join Waitlist"}
       </button>

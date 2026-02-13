@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
+import ParticleConstellation from "@/components/ParticleConstellation";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -11,6 +13,15 @@ export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
   return (
     <section className="relative isolate overflow-hidden">
+      {/* Interactive particle constellation */}
+      <ParticleConstellation particleCount={80} connectionDistance={120} />
+
+      {/* Subtle animated flowing lines */}
+      <AnimatedBackgroundCSS intensity="low" />
+
+      {/* Mesh gradient for depth */}
+      <div className="mesh-gradient -z-20" />
+
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-10 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/20 to-transparent blur-3xl sm:from-[#F0B90B]/25" />
         <div className="absolute right-10 top-32 h-72 w-72 rounded-full bg-gradient-to-tr from-[#F0B90B]/15 to-transparent blur-3xl sm:from-[#F0B90B]/20" />
@@ -40,9 +51,9 @@ export default function Hero() {
             transition={
               prefersReducedMotion
                 ? { duration: 0 }
-                : { duration: 0.6, ease: "easeOut", delay: 0.1 }
+                : { duration: 0.7, ease: "easeOut", delay: 0.1 }
             }
-            className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl xl:text-7xl"
+            className="gradient-shimmer text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Rawli Analytics
           </motion.h1>

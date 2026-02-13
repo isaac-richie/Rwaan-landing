@@ -2,12 +2,14 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 export default function Preview() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-divider relative py-16 sm:py-20">
+    <section className="section-divider relative overflow-hidden py-16 sm:py-20">
+      <AnimatedBackgroundCSS intensity="medium" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-10 top-12 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/15 to-transparent blur-3xl" />
       </div>

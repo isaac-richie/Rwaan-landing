@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 const phases = [
   {
@@ -57,7 +58,8 @@ export default function Roadmap() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-divider relative py-16 sm:py-20">
+    <section className="section-divider relative overflow-hidden py-16 sm:py-20">
+      <AnimatedBackgroundCSS intensity="low" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute right-10 top-12 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>
@@ -95,9 +97,8 @@ export default function Roadmap() {
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-lg font-semibold text-white">{phase.title}</h3>
                 <span
-                  className={`rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] ${
-                    statusStyles[phase.status]
-                  }`}
+                  className={`rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] ${statusStyles[phase.status]
+                    }`}
                 >
                   {phase.status}
                 </span>

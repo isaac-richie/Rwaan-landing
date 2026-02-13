@@ -3,6 +3,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 const faqs = [
   {
@@ -32,7 +33,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section-divider relative py-16 sm:py-20">
+    <section className="section-divider relative overflow-hidden py-16 sm:py-20">
+      <AnimatedBackgroundCSS intensity="low" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-16 top-8 h-64 w-64 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>

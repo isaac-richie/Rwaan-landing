@@ -2,6 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Activity, Radar, ShieldCheck, Sparkles } from "lucide-react";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
+import MagneticCard from "@/components/MagneticCard";
 
 const features = [
   {
@@ -33,7 +35,10 @@ const features = [
 export default function Features() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="perpdex" className="section-divider relative py-16 sm:py-20">
+    <section id="perpdex" className="section-divider relative overflow-hidden py-16 sm:py-20">
+      {/* Animated flowing golden lines */}
+      <AnimatedBackgroundCSS intensity="medium" />
+
       <div className="absolute inset-0 -z-10">
         <div className="absolute right-10 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>
@@ -57,41 +62,41 @@ export default function Features() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-            <motion.div
-              key={feature.title}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={
-                prefersReducedMotion
-                  ? { duration: 0 }
-                  : { duration: 0.55, ease: "easeOut", delay: index * 0.06 }
-              }
-              className="card-glow group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transition hover:-translate-y-1 transform-gpu will-change-transform"
-            >
-              <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                <div className="absolute -left-10 top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
-              </div>
-              <div className="flex items-start justify-between">
-                <div>
-                  <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="text-xl font-semibold text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-white/60">
-                    {feature.description}
-                  </p>
-                </div>
-                <span className="ml-4 mt-1 h-2 w-2 rounded-full bg-bnb-gold shadow-[0_0_10px_rgba(240,185,11,0.7)]" />
-              </div>
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-white/30 to-transparent" />
-              <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white/40">
-                Learn more
-              </p>
-            </motion.div>
-          );
+              <MagneticCard
+                key={feature.title}
+                intensity={12}
+                glowColor="#F0B90B"
+              >
+                <motion.div
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
+                  whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={
+                    prefersReducedMotion
+                      ? { duration: 0 }
+                      : { duration: 0.55, ease: "easeOut", delay: index * 0.06 }
+                  }
+                  className="card-glow group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
+                >
+                  <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                    <div className="absolute -left-10 top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
+                  </div>
+                  <div className="flex items-start justify-between">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                  </div>
+                  <div className="relative mt-5">
+                    <h3 className="text-lg font-semibold text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-3 text-sm text-white/60">
+                      {feature.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </MagneticCard>
+            );
           })}
         </div>
       </div>

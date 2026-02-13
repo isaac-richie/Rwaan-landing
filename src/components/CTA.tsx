@@ -2,11 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import WaitlistForm from "./WaitlistForm";
+import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 
 export default function CTA() {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <section id="waitlist" className="section-divider relative py-20 sm:py-24">
+    <section id="waitlist" className="section-divider relative overflow-hidden py-20 sm:py-24">
+      <AnimatedBackgroundCSS intensity="high" />
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/20 to-transparent blur-3xl" />
       </div>
