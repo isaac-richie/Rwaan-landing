@@ -36,7 +36,7 @@ export default function CTA() {
               to trade execution all in one place. One platform powering all you
               need.
             </p>
-            <WaitlistForm disabled disabledMessage="Waitlist opens soon." />
+            <WaitlistForm />
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
                 href="https://rwaan.gitbook.io/rawli-analytics/"

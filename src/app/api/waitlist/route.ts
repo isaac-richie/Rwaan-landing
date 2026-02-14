@@ -43,7 +43,7 @@ export async function POST(request: Request) {
       const resend = new Resend(resendKey);
       await resend.emails.send({
         from: "onboarding@resend.dev",
-        to: "marketingrawlianalytics@proton.me",
+        to: "rawlianalytics@gmail.com",
         subject: "New waitlist signup",
         text: `New waitlist signup: ${normalizedEmail}`,
       });

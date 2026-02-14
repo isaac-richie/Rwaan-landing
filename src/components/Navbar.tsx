@@ -7,10 +7,10 @@ import { useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { label: "Staking", href: "https://www.stakingrawlianalytics.app", external: true },
+  { label: "RAWLIDEX", href: "https://perp-dex-teal.vercel.app", external: true },
   { label: "RawliCast", href: "#analytics", comingSoon: true },
   { label: "RawliPredict", href: "#perpdex", comingSoon: true },
-  { label: "RawliDEX", href: "https://perp-dex-teal.vercel.app", external: true },
-  { label: "Staking", href: "https://www.stakingrawlianalytics.app", external: true },
 ];
 
 export default function Navbar() {
@@ -64,11 +64,7 @@ export default function Navbar() {
                       event.preventDefault();
                       setActiveSoon(link.label);
                     }}
-                    className={
-                    link.label === "RawliCast" || link.label === "RawliPredict"
-                        ? "group flex items-center gap-2 font-semibold text-bnb-white transition-colors hover:text-bnb-white"
-                        : "group flex items-center gap-2 transition-colors hover:text-bnb-white"
-                    }
+                    className="group flex items-center gap-2 font-bold transition-colors hover:text-bnb-white"
                   >
                     <span>{link.label}</span>
                   </a>
@@ -82,11 +78,7 @@ export default function Navbar() {
                     }}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noreferrer" : undefined}
-                    className={
-                    link.label === "RawliCast" || link.label === "RawliPredict"
-                        ? "group flex items-center gap-2 font-semibold text-bnb-white transition-colors hover:text-bnb-white"
-                        : "group flex items-center gap-2 transition-colors hover:text-bnb-white"
-                    }
+                    className="group flex items-center gap-2 font-bold transition-colors hover:text-bnb-white"
                   >
                     <span>{link.label}</span>
                   </Link>
@@ -162,7 +154,7 @@ export default function Navbar() {
                       }}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noreferrer" : undefined}
-                      className="flex items-center justify-between text-base font-semibold text-white/90 transition hover:text-white"
+                      className="flex items-center justify-between text-base font-bold text-white/90 transition hover:text-white"
                     >
                       <span>{link.label}</span>
                       {isSoon ? (
