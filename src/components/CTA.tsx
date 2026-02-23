@@ -39,7 +39,7 @@ export default function CTA() {
             <WaitlistForm />
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
-                href="https://rwaan.gitbook.io/rawli-analytics/"
+                href="https://rawlianalytics.gitbook.io/rawli-analytics-docs/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-bnb-gold/50 hover:text-white"

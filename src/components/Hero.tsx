@@ -88,7 +88,7 @@ export default function Hero() {
             className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
-              href="https://rwaan.gitbook.io/rawli-analytics/"
+              href="https://rawlianalytics.gitbook.io/rawli-analytics-docs/"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"

@@ -47,12 +47,18 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
             Platform
           </p>
-          <Link href="#analytics" className="block transition hover:text-white">
-            RawliCast
-          </Link>
-          <Link href="#perpdex" className="block transition hover:text-white">
-            RawliPredict
-          </Link>
+          <div className="flex items-center justify-between text-white/40">
+            <span>RawliCast</span>
+            <span className="rounded-full border border-bnb-gold/20 bg-bnb-gold/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-bnb-gold/60">
+              Soon
+            </span>
+          </div>
+          <div className="flex items-center justify-between text-white/40">
+            <span>RawliPredict</span>
+            <span className="rounded-full border border-bnb-gold/20 bg-bnb-gold/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-bnb-gold/60">
+              Soon
+            </span>
+          </div>
           <Link
             href="https://www.stakingrawlianalytics.app"
             target="_blank"
@@ -61,14 +67,12 @@ export default function Footer() {
           >
             Staking
           </Link>
-          <Link
-            href="https://perp-dex-teal.vercel.app"
-            target="_blank"
-            rel="noreferrer"
-            className="block transition hover:text-white"
-          >
-            RawliDEX
-          </Link>
+          <div className="flex items-center justify-between text-white/40">
+            <span>RawliDEX</span>
+            <span className="rounded-full border border-bnb-gold/20 bg-bnb-gold/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-bnb-gold/60">
+              Soon
+            </span>
+          </div>
           <Link
             href="https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a"
             target="_blank"
@@ -92,7 +96,7 @@ export default function Footer() {
             Support
           </p>
           <Link
-            href="https://rwaan.gitbook.io/rawli-analytics/"
+            href="https://rawlianalytics.gitbook.io/rawli-analytics-docs/"
             target="_blank"
             rel="noreferrer"
             className="block transition hover:text-white"

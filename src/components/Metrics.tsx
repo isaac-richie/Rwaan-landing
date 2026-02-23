@@ -15,7 +15,7 @@ const pillars = [
     label: "RawliDEX",
     summary:
       "A perpetual DEX with an agentic trading terminal for autonomous execution, liquidity intelligence, and strategy automation.",
-    status: "Live",
+    status: "In development",
   },
   {
     label: "RawliCast",

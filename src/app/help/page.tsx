@@ -37,7 +37,7 @@ export default function HelpPage() {
           </div>
           <div>
             <h2 className="text-lg font-semibold text-white">Docs</h2>
-            <p className="mt-2">GitBook: https://rwaan.gitbook.io/rawli-analytics/</p>
+            <p className="mt-2">GitBook: https://rawlianalytics.gitbook.io/rawli-analytics-docs/</p>
           </div>
         </div>
       </section>
