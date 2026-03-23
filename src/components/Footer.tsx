@@ -60,7 +60,7 @@ export default function Footer() {
             </span>
           </div>
           <Link
-            href="https://www.stakingrawlianalytics.app"
+            href="https://www.stakingrawlianalytics.xyz/"
             target="_blank"
             rel="noreferrer"
             className="block transition hover:text-white"

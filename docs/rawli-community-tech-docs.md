@@ -45,7 +45,7 @@ RWAAN supports platform access and incentives:
 ## Staking App
 Liquidity Staking is live. Access it here:
 
-- https://www.stakingrawlianalytics.app
+- https://www.stakingrawlianalytics.xyz/
 
 ## FAQ
 **Q: Is Rawli Analytics live today?**  

@@ -97,7 +97,7 @@ export default function Metrics() {
             return (
               <a
                 key={`${item.label}-link`}
-                href="https://www.stakingrawlianalytics.app"
+                href="https://www.stakingrawlianalytics.xyz/"
                 target="_blank"
                 rel="noreferrer"
                 className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0B90B]"
