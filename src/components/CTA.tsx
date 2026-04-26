@@ -48,7 +48,7 @@ export default function CTA() {
                 <span className="text-xs text-bnb-gold/80">↗</span>
               </a>
               <a
-                href="https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a"
+                href="https://dex.rawlianalytics.io/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-bnb-gold/20 bg-bnb-gold/10 px-4 py-2 text-sm font-semibold text-bnb-gold transition hover:border-bnb-gold/40"

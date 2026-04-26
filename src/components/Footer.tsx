@@ -67,14 +67,16 @@ export default function Footer() {
           >
             Staking
           </Link>
-          <div className="flex items-center justify-between text-white/40">
-            <span>RawliDEX</span>
-            <span className="rounded-full border border-bnb-gold/20 bg-bnb-gold/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-bnb-gold/60">
-              Soon
-            </span>
-          </div>
           <Link
-            href="https://pancakeswap.finance/swap?outputCurrency=0xACB921bf2Dac2F7E8E101AAd9CA013d6Af5C648a"
+            href="https://dex.rawlianalytics.io/"
+            target="_blank"
+            rel="noreferrer"
+            className="block transition hover:text-white"
+          >
+            RawliDEX
+          </Link>
+          <Link
+            href="https://dex.rawlianalytics.io/"
             target="_blank"
             rel="noreferrer"
             className="block transition hover:text-white"

@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Staking", href: "https://www.stakingrawlianalytics.xyz/", external: true },
-  { label: "RAWLIDEX", href: "#rawlidex", comingSoon: true },
+  { label: "RAWLIDEX", href: "https://dex.rawlianalytics.io/", external: true },
   { label: "RawliCast", href: "#analytics", comingSoon: true },
   { label: "RawliPredict", href: "#perpdex", comingSoon: true },
 ];
