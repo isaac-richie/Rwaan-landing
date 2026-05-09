@@ -58,7 +58,7 @@ export default function FAQ() {
             return (
               <div
                 key={item.q}
-                className="card-glow rounded-2xl border border-white/10 bg-white/5 px-5 py-4 ring-1 ring-white/5 transform-gpu will-change-transform"
+                className={`card-glow rounded-2xl border bg-white/[0.03] px-4 py-4 ring-1 ring-white/5 transform-gpu will-change-transform backdrop-blur-sm transition-colors duration-300 sm:px-5 ${isOpen ? "border-bnb-gold/20" : "border-white/10"}`}
               >
                 <button
                   type="button"
@@ -67,7 +67,7 @@ export default function FAQ() {
                 >
                   <span>{item.q}</span>
                   <ChevronDown
-                    className={`h-4 w-4 transition ${isOpen ? "rotate-180" : ""}`}
+                    className={`h-4 w-4 shrink-0 text-bnb-gold/70 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                   />
                 </button>
 

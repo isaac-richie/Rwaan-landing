@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import AnimatedBackgroundCSS from "@/components/AnimatedBackgroundCSS";
 import ParticleConstellation from "@/components/ParticleConstellation";
 
@@ -8,6 +9,34 @@ const fadeUp = {
   hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 },
 };
+
+function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (hasAnimated) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && ref.current) {
+          setHasAnimated(true);
+          animate(0, value, {
+            duration: 2,
+            ease: "easeOut",
+            onUpdate: (v) => {
+              if (ref.current) ref.current.textContent = Math.floor(v).toLocaleString() + suffix;
+            },
+          });
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [value, suffix, hasAnimated]);
+
+  return <span ref={ref} className="metric-number">0{suffix}</span>;
+}
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -85,16 +114,51 @@ export default function Hero() {
                 ? { duration: 0 }
                 : { duration: 0.6, ease: "easeOut", delay: 0.3 }
             }
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
+            <a
+              href="#waitlist"
+              className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#F0B90B] via-[#F6C84C] to-[#F0B90B] px-7 py-3.5 text-sm font-semibold text-black shadow-[0_0_28px_rgba(240,185,11,0.4)] transition hover:shadow-[0_0_40px_rgba(240,185,11,0.6)]"
+            >
+              <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#F0B90B]/35 to-transparent blur-xl opacity-70 transition group-hover:opacity-100" />
+              Get Early Access
+            </a>
             <a
               href="https://rawlianalytics.gitbook.io/rawli-analytics-docs/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:bg-white/5 hover:text-white"
             >
               Read Docs
             </a>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={fadeUp}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 0.6, ease: "easeOut", delay: 0.4 }
+            }
+            className="mt-8 flex items-center gap-5 border-t border-white/10 pt-5 sm:mt-10 sm:gap-8 sm:pt-6"
+          >
+            <div>
+              <p className="text-xl font-bold text-white sm:text-2xl"><AnimatedCounter value={4} suffix="+" /></p>
+              <p className="text-[11px] text-white/50 sm:text-xs">Products Live</p>
+            </div>
+            <div className="h-8 w-px bg-white/10" />
+            <div>
+              <p className="text-xl font-bold text-white sm:text-2xl"><AnimatedCounter value={100} suffix="%" /></p>
+              <p className="text-[11px] text-white/50 sm:text-xs">Non-Custodial</p>
+            </div>
+            <div className="h-8 w-px bg-white/10" />
+            <div>
+              <p className="text-xl font-bold text-white sm:text-2xl"><AnimatedCounter value={56} suffix="+" /></p>
+              <p className="text-[11px] text-white/50 sm:text-xs">BNB Chain</p>
+            </div>
           </motion.div>
         </div>
 

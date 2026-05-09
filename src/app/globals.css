@@ -5,6 +5,10 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -16,6 +20,24 @@ body {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.005em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0E11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 185, 11, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 185, 11, 0.5);
 }
 
 * {
@@ -73,6 +95,17 @@ canvas {
   contain: layout style paint;
 }
 
+/* Noise/grain texture overlay for depth */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 @layer utilities {
   .section-divider {
     position: relative;
@@ -91,6 +124,60 @@ canvas {
         rgba(255, 255, 255, 0.14),
         transparent);
     opacity: 0.6;
+  }
+}
+
+/* Animated gradient border */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.gradient-border {
+  position: relative;
+  border: none !important;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--angle), transparent 25%, #F0B90B 50%, transparent 75%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: rotate-gradient 4s linear infinite;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes rotate-gradient {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Disable animated gradient borders on mobile for performance */
+@media (max-width: 768px) {
+  .gradient-border::before {
+    display: none;
+  }
+
+  .grain-overlay::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-border::before {
+    animation: none;
   }
 }
 

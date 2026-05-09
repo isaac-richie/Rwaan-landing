@@ -45,7 +45,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-bnb-black font-sans text-bnb-white">
+      <body className="grain-overlay min-h-screen bg-bnb-black font-sans text-bnb-white">
         {children}
       </body>
     </html>

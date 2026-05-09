@@ -39,15 +39,22 @@ export default function Preview() {
           }
           className="grid gap-6 md:grid-cols-[1.4fr_1fr]"
         >
-          <div className="card-glow relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-black/60 p-4 ring-1 ring-white/5 transform-gpu will-change-transform">
+          <div className="card-glow relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-black/60 p-4 ring-1 ring-white/5 transform-gpu will-change-transform">
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
-            <div className="flex items-center justify-between px-2 pb-4 pt-2">
-              <p className="text-sm text-white/60">Rawli Terminal Preview</p>
-              <span className="rounded-full border border-bnb-gold/40 bg-bnb-gold/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-bnb-gold">
-                Prototype
-              </span>
-            </div>
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/50 ring-1 ring-white/5">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-3 py-2 sm:px-4 sm:py-3">
+                <div className="flex gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-white/20 sm:h-2.5 sm:w-2.5" />
+                  <span className="h-2 w-2 rounded-full bg-white/20 sm:h-2.5 sm:w-2.5" />
+                  <span className="h-2 w-2 rounded-full bg-white/20 sm:h-2.5 sm:w-2.5" />
+                </div>
+                <div className="ml-2 flex-1 truncate rounded-md border border-white/10 bg-black/30 px-2 py-1 text-[10px] text-white/40 sm:ml-4 sm:px-3 sm:text-[11px]">
+                  app.rawlianalytics.io
+                </div>
+                <span className="hidden shrink-0 rounded-full border border-bnb-gold/40 bg-bnb-gold/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-bnb-gold sm:inline-flex">
+                  Prototype
+                </span>
+              </div>
               <Image
                 src="/work.png"
                 alt="Rawli Analytics terminal preview"

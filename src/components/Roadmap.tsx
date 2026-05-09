@@ -92,21 +92,27 @@ export default function Roadmap() {
                   ? { duration: 0 }
                   : { duration: 0.5, ease: "easeOut", delay: index * 0.05 }
               }
-              className="card-glow rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
+              className="gradient-border card-glow relative rounded-3xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/5 transform-gpu will-change-transform backdrop-blur-sm"
             >
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-lg font-semibold text-white">{phase.title}</h3>
+              <div className="hidden md:block absolute -left-px top-6 h-8 w-1 rounded-r-full bg-gradient-to-b from-[#F0B90B] to-[#F0B90B]/30" />
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-xs font-bold text-bnb-gold">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-base font-semibold text-white sm:text-lg">{phase.title}</h3>
+                </div>
                 <span
-                  className={`rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] ${statusStyles[phase.status]
+                  className={`shrink-0 self-start rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] sm:self-auto ${statusStyles[phase.status]
                     }`}
                 >
                   {phase.status}
                 </span>
               </div>
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
+              <ul className="mt-4 space-y-2 pl-10 text-sm text-white/70">
                 {phase.points.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-bnb-gold" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bnb-gold/70" />
                     <span>{point}</span>
                   </li>
                 ))}

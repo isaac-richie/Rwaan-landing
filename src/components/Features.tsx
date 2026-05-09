@@ -76,21 +76,23 @@ export default function Features() {
                       ? { duration: 0 }
                       : { duration: 0.55, ease: "easeOut", delay: index * 0.06 }
                   }
-                  className="card-glow group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
+                  className="gradient-border card-glow group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/5 transform-gpu will-change-transform backdrop-blur-sm"
                 >
-                  <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                    <div className="absolute -left-10 top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="absolute -left-10 top-10 h-32 w-32 rounded-full bg-gradient-to-br from-[#F0B90B]/20 to-transparent blur-2xl" />
+                    <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-tl from-[#F0B90B]/10 to-transparent blur-2xl" />
                   </div>
                   <div className="flex items-start justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-white/10 to-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
                       <Icon className="h-5 w-5" />
                     </span>
+                    <span className="text-xs font-mono text-white/20">0{index + 1}</span>
                   </div>
                   <div className="relative mt-5">
                     <h3 className="text-lg font-semibold text-white">
                       {feature.title}
                     </h3>
-                    <p className="mt-3 text-sm text-white/60">
+                    <p className="mt-3 text-sm leading-relaxed text-white/60">
                       {feature.description}
                     </p>
                   </div>

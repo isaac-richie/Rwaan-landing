@@ -21,9 +21,10 @@ export default function CTA() {
           transition={
             prefersReducedMotion ? { duration: 0 } : { duration: 0.6, ease: "easeOut" }
           }
-          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-black/60 p-10 md:p-12"
+          className="gradient-border relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-black/60 p-6 sm:p-10 md:p-14"
         >
           <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-gradient-to-br from-[#F0B90B]/25 to-transparent blur-3xl" />
+          <div className="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-gradient-to-tr from-[#F0B90B]/10 to-transparent blur-3xl" />
           <div className="relative">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               Ready to deploy

@@ -67,13 +67,13 @@ export default function Security() {
                     ? { duration: 0 }
                     : { duration: 0.5, ease: "easeOut", delay: index * 0.05 }
                 }
-                className="card-glow rounded-3xl border border-white/10 bg-white/5 p-6 ring-1 ring-white/5 transform-gpu will-change-transform"
+                className="gradient-border card-glow group rounded-3xl border border-white/10 bg-white/[0.03] p-6 ring-1 ring-white/5 transform-gpu will-change-transform backdrop-blur-sm"
               >
-                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30">
+                <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-white/10 to-white/5 text-bnb-gold shadow-[0_0_25px_rgba(240,185,11,0.25)] backdrop-blur ring-1 ring-bnb-gold/30 transition-transform duration-300 group-hover:scale-110">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm text-white/60">{item.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{item.description}</p>
               </motion.div>
             );
           })}

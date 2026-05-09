@@ -12,7 +12,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 py-10 sm:py-12">
+    <footer className="relative border-t border-white/10 py-12 sm:py-16">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-48 w-[28rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#F0B90B]/10 to-transparent blur-3xl" />
       </div>
@@ -129,9 +129,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 flex w-full max-w-6xl flex-col gap-2 px-4 text-xs text-white/40 sm:px-6 md:flex-row md:items-center md:justify-between">
-        <span>© 2026 Rawli Analytics. All rights reserved.</span>
-        <span>BNB Chain • RawliPredict • DeFi Intelligence</span>
+      <div className="mx-auto mt-10 w-full max-w-6xl px-4 sm:px-6">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="mt-6 flex flex-col gap-2 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+          <span>© 2026 Rawli Analytics. All rights reserved.</span>
+          <span>BNB Chain • RawliPredict • DeFi Intelligence</span>
+        </div>
       </div>
     </footer>
   );
